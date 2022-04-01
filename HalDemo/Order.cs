@@ -1,6 +1,6 @@
 ﻿namespace HalDemo;
 
-public class Order : HalObject
+public record Order : HalObject
 {
 	public decimal? total { get; set; }
 	public string? currency { get; set; }

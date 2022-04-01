@@ -11,7 +11,7 @@ if (orders._links?.Count > 0)
 {
 	foreach (var link in orders._links)
 	{
-		Console.WriteLine($"Orders link [{link.Key}]: {(link.Value.ContainsKey("href") ? link.Value["href"] : "(not found)")}");
+		Console.WriteLine($"Orders link [{link.Key}]: {link.Value.href}");
 	}
 }
 
@@ -24,7 +24,7 @@ if (orders._embedded?.ContainsKey("orders") ?? false)
 		Console.WriteLine($"Order for {order.total} {order.currency} status {order.status}");
 		if (order._links?.ContainsKey("self") ?? false)
 		{
-			Console.WriteLine($"Order link: {(order._links["self"].ContainsKey("href") ? order._links["self"]["href"] : "(not found)")}");
+			Console.WriteLine($"Order link: {order._links["self"].href}");
 		}
 	}
 }
